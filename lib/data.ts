@@ -133,41 +133,41 @@ export const PROJECTS: Project[] = [
     description:
       "Natural language trip planning app that generates multi-day travel itineraries using AI, with saved trips, shareable links, and Redis-cached responses for performance.",
     tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "OpenAI"],
-    github: "https://github.com/rajbahakdanyu",
+    github: "https://github.com/rajbahakdanyu/ai-trip-planner",
     live: "#",
     gradient: "from-violet-600 to-indigo-600",
     number: "01",
   },
-  {
-    title: "AI Agent Workflow Builder",
-    description:
-      "Visual drag-and-drop builder for chaining LLM calls with tool use. Real-time streaming output, save/load workflows, and a node-based editor for composing AI agent pipelines.",
-    tags: ["Next.js", "TypeScript", "Hono", "PostgreSQL", "Redis"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-pink-600 to-rose-600",
-    number: "02",
-  },
-  {
-    title: "Distributed Job Queue Dashboard",
-    description:
-      "Full-stack dashboard for scheduling and monitoring distributed background jobs. Features retry logic, failure alerts, live metrics charts, and multi-queue support via BullMQ and Redis.",
-    tags: ["Hono", "BullMQ", "Redis", "PostgreSQL", "Docker"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-emerald-600 to-teal-600",
-    number: "03",
-  },
-  {
-    title: "Collaborative Code Review Tool",
-    description:
-      "Real-time code review platform with live commenting on diffs, threaded discussions, GitHub OAuth, and presence indicators — powered by WebSockets and Redis Pub/Sub.",
-    tags: ["Next.js", "Hono", "WebSockets", "Redis", "PostgreSQL"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-amber-600 to-orange-600",
-    number: "04",
-  },
+  // {
+  //   title: "AI Agent Workflow Builder",
+  //   description:
+  //     "Visual drag-and-drop builder for chaining LLM calls with tool use. Real-time streaming output, save/load workflows, and a node-based editor for composing AI agent pipelines.",
+  //   tags: ["Next.js", "TypeScript", "Hono", "PostgreSQL", "Redis"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-pink-600 to-rose-600",
+  //   number: "02",
+  // },
+  // {
+  //   title: "Distributed Job Queue Dashboard",
+  //   description:
+  //     "Full-stack dashboard for scheduling and monitoring distributed background jobs. Features retry logic, failure alerts, live metrics charts, and multi-queue support via BullMQ and Redis.",
+  //   tags: ["Hono", "BullMQ", "Redis", "PostgreSQL", "Docker"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-emerald-600 to-teal-600",
+  //   number: "03",
+  // },
+  // {
+  //   title: "Collaborative Code Review Tool",
+  //   description:
+  //     "Real-time code review platform with live commenting on diffs, threaded discussions, GitHub OAuth, and presence indicators — powered by WebSockets and Redis Pub/Sub.",
+  //   tags: ["Next.js", "Hono", "WebSockets", "Redis", "PostgreSQL"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-amber-600 to-orange-600",
+  //   number: "04",
+  // },
 ];
 
 export interface ConnectItem {
