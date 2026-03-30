@@ -25,7 +25,7 @@ export default function Footer() {
           className="opacity-50"
         />
         <p className="text-gray-600 text-sm">
-          © {new Date().getFullYear()} Danyu Rajbahak · Built with Next.js
+          © {new Date().getFullYear()} Danyu Rajbahak. All rights reserved.
         </p>
         <div className="flex items-center gap-4">
           {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
