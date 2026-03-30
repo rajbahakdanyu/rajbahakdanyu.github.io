@@ -36,7 +36,7 @@ export default function Navbar() {
           aria-label="Scroll to top"
         >
           <Image
-            src="/portfolio/logo.svg"
+            src="/logo.svg"
             alt="Logo"
             width={44}
             height={44}

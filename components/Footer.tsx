@@ -18,7 +18,7 @@ export default function Footer() {
     <footer className="relative py-10 px-6 border-t border-white/6">
       <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
         <Image
-          src="/portfolio/logo.svg"
+          src="/logo.svg"
           alt="Logo"
           width={32}
           height={32}
