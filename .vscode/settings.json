@@ -24,5 +24,6 @@
     "editor.defaultFormatter": "biomejs.biome"
   },
   "vitest.cliArguments": "--configLoader runner",
-  "biome.lsp.bin": "${workspaceFolder}/node_modules/.bin/biome"
+  "biome.lsp.bin": "${workspaceFolder}/node_modules/.bin/biome",
+  "snyk.advanced.autoSelectOrganization": false
 }
