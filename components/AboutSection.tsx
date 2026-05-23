@@ -44,7 +44,7 @@ export default function AboutSection() {
               variants={fadeInUp}
               className="text-gray-400 text-lg leading-relaxed mb-5"
             >
-              Hey, I'm Danyu — a passionate Full Stack Developer who loves
+              Hey, I'm Danyu. A passionate Full Stack Developer who loves
               building scalable, performant web applications that are as
               beautiful under the hood as they are on screen.
             </motion.p>
@@ -53,9 +53,9 @@ export default function AboutSection() {
               className="text-gray-400 text-lg leading-relaxed mb-10"
             >
               When I'm not writing code, I'm exploring new technologies,
-              contributing to open-source, or sketching ideas for my next side
-              project. I believe great software is a perfect blend of clean
-              architecture and delightful user experience.
+              running, or connecting with nature. I believe great software is a
+              perfect blend of clean architecture and delightful user
+              experience.
             </motion.p>
             <motion.div variants={fadeInUp} className="flex flex-wrap gap-4">
               <a
