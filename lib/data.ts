@@ -128,46 +128,46 @@ export interface Project {
 }
 
 export const PROJECTS: Project[] = [
-  {
-    title: "AI Travel Itinerary Planner",
-    description:
-      "Natural language trip planning app that generates multi-day travel itineraries using AI, with saved trips, shareable links, and Redis-cached responses for performance.",
-    tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "OpenAI"],
-    github: "https://github.com/rajbahakdanyu/ai-trip-planner",
-    live: "#",
-    gradient: "from-violet-600 to-indigo-600",
-    number: "01",
-  },
-  {
-    title: "Real-time Event Booking Platform",
-    description:
-      "Full-stack event booking platform with real-time seat availability via SignalR, Stripe checkout, JWT auth, and an admin panel — powered by an ASP.NET Core API and a Next.js frontend.",
-    tags: ["ASP.NET Core", "SignalR", "Next.js", "PostgreSQL", "Docker"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-pink-600 to-rose-600",
-    number: "02",
-  },
-  {
-    title: "URL Shortener & Analytics",
-    description:
-      "High-performance URL shortening service with click tracking, referrer and geo analytics, QR code generation, and rate limiting — built with ASP.NET Core Minimal APIs and Redis.",
-    tags: ["ASP.NET Core", "Redis", "Next.js", "PostgreSQL", "AWS"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-emerald-600 to-teal-600",
-    number: "03",
-  },
-  {
-    title: "Job Application Tracker",
-    description:
-      "Kanban-style job application tracker with resume uploads, interview scheduling with reminders, response rate analytics, and CSV export — built with ASP.NET Core and Entity Framework.",
-    tags: ["ASP.NET Core", "EF Core", "Next.js", "PostgreSQL", "Docker"],
-    github: "https://github.com/rajbahakdanyu",
-    live: "#",
-    gradient: "from-amber-600 to-orange-600",
-    number: "04",
-  },
+  // {
+  //   title: "AI Travel Itinerary Planner",
+  //   description:
+  //     "Natural language trip planning app that generates multi-day travel itineraries using AI, with saved trips, shareable links, and Redis-cached responses for performance.",
+  //   tags: ["Next.js", "TypeScript", "PostgreSQL", "Redis", "OpenAI"],
+  //   github: "https://github.com/rajbahakdanyu/ai-trip-planner",
+  //   live: "#",
+  //   gradient: "from-violet-600 to-indigo-600",
+  //   number: "01",
+  // },
+  // {
+  //   title: "Real-time Event Booking Platform",
+  //   description:
+  //     "Full-stack event booking platform with real-time seat availability via SignalR, Stripe checkout, JWT auth, and an admin panel — powered by an ASP.NET Core API and a Next.js frontend.",
+  //   tags: ["ASP.NET Core", "SignalR", "Next.js", "PostgreSQL", "Docker"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-pink-600 to-rose-600",
+  //   number: "02",
+  // },
+  // {
+  //   title: "URL Shortener & Analytics",
+  //   description:
+  //     "High-performance URL shortening service with click tracking, referrer and geo analytics, QR code generation, and rate limiting — built with ASP.NET Core Minimal APIs and Redis.",
+  //   tags: ["ASP.NET Core", "Redis", "Next.js", "PostgreSQL", "AWS"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-emerald-600 to-teal-600",
+  //   number: "03",
+  // },
+  // {
+  //   title: "Job Application Tracker",
+  //   description:
+  //     "Kanban-style job application tracker with resume uploads, interview scheduling with reminders, response rate analytics, and CSV export — built with ASP.NET Core and Entity Framework.",
+  //   tags: ["ASP.NET Core", "EF Core", "Next.js", "PostgreSQL", "Docker"],
+  //   github: "https://github.com/rajbahakdanyu",
+  //   live: "#",
+  //   gradient: "from-amber-600 to-orange-600",
+  //   number: "04",
+  // },
 ];
 
 export interface ConnectItem {
