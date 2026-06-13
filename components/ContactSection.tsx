@@ -1,22 +1,11 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { useState } from "react";
-import { FiArrowUpRight, FiCheck, FiCopy } from "react-icons/fi";
+import { FiArrowUpRight } from "react-icons/fi";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { CONNECT } from "@/lib/data";
 
-const EMAIL = "rajbahakdanyu@gmail.com";
-
 export default function ContactSection() {
-  const [copied, setCopied] = useState(false);
-
-  const copyEmail = () => {
-    navigator.clipboard.writeText(EMAIL);
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  };
-
   return (
     <section id="contact" className="relative border-b border-ink bg-paper-2">
       <div className="border-b border-ink bg-paper">
@@ -62,38 +51,6 @@ export default function ContactSection() {
           >
             Got an idea, a project, or just want to nerd out about something?
             Send me a note. I read everything, and I'll actually write back.
-          </motion.div>
-
-          {/* Email block, the hero of this section */}
-          <motion.div variants={fadeInUp} className="lg:col-span-12">
-            <button
-              type="button"
-              onClick={copyEmail}
-              className="group w-full block border-2 border-ink bg-paper hover:bg-ink hover:text-paper transition-colors duration-200 p-6 md:p-10 text-left"
-              aria-label="Copy email"
-            >
-              <div className="flex items-center justify-between gap-6 flex-wrap">
-                <div className="min-w-0 flex-1">
-                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55 group-hover:text-paper/60 mb-3">
-                    Write to
-                  </p>
-                  <p className="font-display italic text-[clamp(1.75rem,5vw,4.5rem)] leading-none text-ink group-hover:text-paper truncate">
-                    {EMAIL}
-                  </p>
-                </div>
-                <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] shrink-0">
-                  {copied ? (
-                    <>
-                      <FiCheck size={18} className="text-accent" /> Copied
-                    </>
-                  ) : (
-                    <>
-                      <FiCopy size={16} /> Click to copy
-                    </>
-                  )}
-                </div>
-              </div>
-            </button>
           </motion.div>
 
           {/* Connect channels */}

@@ -82,12 +82,7 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
               className="block pl-[8vw] -mt-[0.08em]"
             >
-              <span className="relative">
-                Rajbahak
-                <span className="absolute -right-[0.18em] top-0 text-accent not-italic font-normal">
-                  *
-                </span>
-              </span>
+              Rajbahak
             </motion.span>
           </h1>
 
@@ -98,10 +93,10 @@ export default function HeroSection() {
             transition={{ duration: 0.7, delay: 0.55 }}
             className="mt-12 grid md:grid-cols-12 gap-8 items-end"
           >
-            {/* Footnote-style description */}
+            {/* Description */}
             <div className="md:col-span-7 lg:col-span-6 border-l-2 border-ink pl-5">
               <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/60 mb-2">
-                * Full-Stack Engineer
+                Full-Stack Engineer
               </p>
               <p className="text-lg md:text-xl text-ink leading-snug max-w-xl">
                 I make software that's{" "}

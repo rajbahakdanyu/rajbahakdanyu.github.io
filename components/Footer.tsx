@@ -14,14 +14,7 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative bg-ink text-paper">
-      {/* Massive footer wordmark */}
-      <div className="border-b border-paper/15 overflow-hidden">
-        <p className="display text-[clamp(5rem,22vw,18rem)] leading-[0.85] text-paper px-6 md:px-10 py-10 select-none">
-          Rajbahak<span className="text-accent not-italic font-normal">.</span>
-        </p>
-      </div>
-
+    <footer className="relative bg-ink text-paper border-t border-paper/15">
       <div className="max-w-350 mx-auto px-6 md:px-10 py-8 grid sm:grid-cols-3 gap-6 items-center font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70">
         <p>© {new Date().getFullYear()} D. Rajbahak</p>
         <p className="sm:text-center">
