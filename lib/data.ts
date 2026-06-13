@@ -42,8 +42,8 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Nov 2024 – Present",
     location: "Brisbane, Australia · Hybrid",
     bullets: [
-      "Building and maintaining full-stack features across internal travel booking platforms using React, TypeScript, and AWS Lambda.",
-      "Collaborating in an agile cross-functional team to deliver scalable, cloud-native solutions.",
+      "Working on full-stack features across the internal travel booking platforms in React, TypeScript and AWS Lambda.",
+      "Sit inside a cross-functional team where I help push cloud-native stuff out the door each sprint.",
     ],
   },
   {
@@ -53,8 +53,8 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Nov 2023 – Oct 2024",
     location: "Brisbane, Australia · Hybrid",
     bullets: [
-      "Developed and deployed containerised microservices using Docker; conducted load testing to ensure system reliability at scale.",
-      "Contributed across the full stack — from React frontends to Node.js APIs and cloud infrastructure.",
+      "Built and shipped containerised microservices in Docker, then load-tested them so things didn't fall over under traffic.",
+      "Was hands-on across the whole stack: React on the front, Node.js APIs in the middle, cloud bits at the back.",
     ],
   },
   {
@@ -64,7 +64,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Aug 2021 – Jun 2022",
     location: "Kathmandu, Nepal · On-site",
     bullets: [
-      "Built cross-platform mobile applications with Flutter, integrating NoSQL databases and RESTful APIs via Postman.",
+      "Built cross-platform mobile apps in Flutter, hooking them up to NoSQL databases and REST APIs (a lot of Postman fiddling).",
     ],
   },
   {
@@ -74,7 +74,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     period: "Nov 2020 – Feb 2021",
     location: "Kathmandu, Nepal · Remote",
     bullets: [
-      "Developed back-end web features using Django and jQuery, helping deliver client-facing projects during a 4-month internship.",
+      "My first proper dev gig. Wrote back-end features in Django and a fair bit of jQuery on top, helping ship client work over a four-month internship.",
     ],
   },
   {
@@ -83,7 +83,7 @@ export const EXPERIENCE: ExperienceItem[] = [
     type: "Freelance",
     period: "Jun 2019 – Oct 2019",
     bullets: [
-      "Delivered freelance web projects using Laravel, building custom back-end solutions for clients.",
+      "Took on a few freelance Laravel gigs and built custom back-ends for whatever clients needed.",
     ],
   },
 ];

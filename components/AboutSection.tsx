@@ -44,17 +44,14 @@ export default function AboutSection() {
           {/* Headline */}
           <motion.div variants={fadeInUp} className="lg:col-span-7">
             <h2 className="display text-[clamp(2.75rem,6vw,5.5rem)] text-ink">
-              Not crafting,{" "}
-              <span className="not-italic font-normal text-accent">
-                building
-              </span>
-              .
+              I'd rather{" "}
+              <span className="not-italic font-normal text-accent">build</span>{" "}
+              a working
               <br />
-              Not pixels —{" "}
               <span className="underline decoration-ink decoration-[3px] underline-offset-10">
-                products
-              </span>
-              .
+                product
+              </span>{" "}
+              than a perfect pixel.
             </h2>
           </motion.div>
 
@@ -82,17 +79,18 @@ export default function AboutSection() {
             className="lg:col-span-7 lg:col-start-1 space-y-5 text-ink/85 text-lg leading-relaxed max-w-2xl"
           >
             <p>
-              I'm Danyu — an engineer who likes the boring, load-bearing parts
-              of software. The kind that doesn't trend on dribbble but keeps the
-              lights on for thousands of users.
+              Hey, I'm Danyu. I'm into the unglamorous parts of software. The
+              bits nobody really tweets about, but everyone notices when they
+              break at 2am.
             </p>
             <p>
-              These days I work across React, TypeScript and AWS Lambda on
-              internal travel-booking platforms. Before that, microservices in
-              Docker, mobile apps in Flutter, and Django back-ends in Nepal.
+              These days I'm mostly in React and TypeScript, building things on
+              top of AWS Lambda for an internal travel platform. Before that it
+              was microservices in Docker, then Flutter mobile apps, and a while
+              back some Django work in Nepal.
             </p>
             <p className="text-ink/60 italic font-display text-xl">
-              "Make it work. Make it right. Then make it loud."
+              "Make it work first. Worry about pretty later."
             </p>
 
             <div className="pt-2 flex flex-wrap gap-3">

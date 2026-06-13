@@ -60,11 +60,11 @@ export default function ContactSection() {
             variants={fadeInUp}
             className="lg:col-span-4 border-l-2 border-ink pl-5 font-mono text-sm text-ink/80 leading-relaxed"
           >
-            Got a brief, an idea, or a half-formed thought you want to test
-            against an engineer? My inbox is open. I'll write back like a human.
+            Got an idea, a project, or just want to nerd out about something?
+            Send me a note. I read everything, and I'll actually write back.
           </motion.div>
 
-          {/* Email block — the hero of this section */}
+          {/* Email block, the hero of this section */}
           <motion.div variants={fadeInUp} className="lg:col-span-12">
             <button
               type="button"

@@ -49,13 +49,13 @@ export default function SkillsSection() {
               variants={fadeInUp}
               className="lg:col-span-4 lg:self-end text-paper/70 text-base leading-relaxed border-l-2 border-paper/40 pl-5 font-mono"
             >
-              Frameworks come and go — patterns stay. These are the ones I've
-              earned my scars with, day in, day out.
+              Frameworks change every six months. Habits stick around. These are
+              the ones I actually use.
             </motion.p>
           </motion.div>
         </div>
 
-        {/* Marquee ticker — full bleed */}
+        {/* Marquee ticker, full bleed */}
         <div className="marquee relative overflow-hidden border-y-2 border-paper py-6">
           <div className="marquee-track flex w-max gap-12 whitespace-nowrap">
             {ticker.map((skill, i) => (

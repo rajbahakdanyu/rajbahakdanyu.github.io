@@ -69,8 +69,9 @@ export default function ProjectsSection() {
             variants={fadeInUp}
             className="lg:col-span-4 lg:self-end text-ink/70 text-base leading-relaxed border-l-2 border-ink pl-5 font-mono"
           >
-            A rolling set of side projects exploring AI tooling, real-time
-            systems and the boring infrastructure that holds it all together.
+            Side projects I'm tinkering with on the weekends. Some AI stuff,
+            some real-time things, plus the unsexy plumbing nobody really wants
+            to write.
           </motion.p>
         </motion.div>
 
@@ -159,17 +160,17 @@ export default function ProjectsSection() {
                 [ Status: Currently cooking ]
               </p>
               <p className="display text-5xl md:text-7xl text-ink leading-[0.95]">
-                A new index is being{" "}
+                Working on a fresh{" "}
                 <span className="not-italic font-normal text-accent">
-                  printed
+                  batch
                 </span>
                 .
               </p>
               <p className="mt-8 text-ink/70 max-w-lg mx-auto">
-                Four side projects in the pipeline — an AI itinerary planner, a
-                real-time event booking platform, a URL shortener with
-                analytics, and a job-application tracker. Drop a line if you'd
-                like an early peek.
+                Got four ideas I'm chipping away at right now: an AI itinerary
+                planner, a real-time event booking thing, a URL shortener with
+                proper analytics, and a job-application tracker. Email me if you
+                want a sneak peek before they're done.
               </p>
               <div className="mt-10 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink">
                 <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-accent" />

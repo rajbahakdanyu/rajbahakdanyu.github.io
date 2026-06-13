@@ -30,20 +30,19 @@ export default function ExperienceSection() {
             variants={fadeInUp}
             className="display text-[clamp(2.75rem,6vw,5.5rem)] text-ink lg:col-span-8"
           >
-            Five companies. Two countries.
+            A handful of jobs across two countries.
             <br />
-            One{" "}
-            <span className="not-italic font-normal text-accent">
-              throughline
-            </span>
-            .
+            Same{" "}
+            <span className="not-italic font-normal text-accent">brain</span>{" "}
+            throughout.
           </motion.h2>
           <motion.p
             variants={fadeInUp}
             className="lg:col-span-4 lg:self-end text-ink/70 text-base leading-relaxed border-l-2 border-ink pl-5 font-mono"
           >
-            From Django interns at a Kathmandu studio to Lambdas at a Brisbane
-            travel group — the medium changes, the discipline doesn't.
+            Started out writing Django for a small studio in Kathmandu. Now I'm
+            pushing Lambdas at a travel group in Brisbane. The stack keeps
+            changing. The way I work, mostly hasn't.
           </motion.p>
         </motion.div>
 

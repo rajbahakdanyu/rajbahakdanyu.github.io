@@ -104,14 +104,14 @@ export default function HeroSection() {
                 * Full-Stack Engineer
               </p>
               <p className="text-lg md:text-xl text-ink leading-snug max-w-xl">
-                I build software that is{" "}
+                I make software that's{" "}
                 <span className="font-display italic">fast</span>,{" "}
-                <span className="font-display italic">considered</span>, and
+                <span className="font-display italic">thoughtful</span>, and
                 actually{" "}
                 <span className="underline decoration-accent decoration-[3px] underline-offset-4">
-                  ships
+                  goes live
                 </span>
-                . Currently shipping travel platforms at scale from Brisbane.
+                . Right now I'm working on travel platforms over in Brisbane.
               </p>
             </div>
 
