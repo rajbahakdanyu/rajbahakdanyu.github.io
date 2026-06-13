@@ -1,7 +1,6 @@
 import AboutSection from "@/components/AboutSection";
 import BackToTop from "@/components/BackToTop";
 import ContactSection from "@/components/ContactSection";
-import CursorGlow from "@/components/CursorGlow";
 import ExperienceSection from "@/components/ExperienceSection";
 import Footer from "@/components/Footer";
 import HeroSection from "@/components/HeroSection";
@@ -13,9 +12,8 @@ import SkillsSection from "@/components/SkillsSection";
 export default function PortfolioWebsite() {
   return (
     <>
-      <CursorGlow />
       <ScrollProgress />
-      <main className="min-h-screen bg-[#050508] text-white">
+      <main className="min-h-screen bg-paper text-ink font-sans selection:bg-accent selection:text-paper">
         <Navbar />
         <HeroSection />
         <AboutSection />

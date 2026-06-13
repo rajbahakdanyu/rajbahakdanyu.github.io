@@ -1,110 +1,118 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { FiBriefcase } from "react-icons/fi";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { EXPERIENCE } from "@/lib/data";
 
 export default function ExperienceSection() {
   return (
-    <section id="experience" className="relative py-32 px-6">
-      <div className="absolute top-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-violet-500/40 to-transparent" />
+    <section id="experience" className="relative border-b border-ink">
+      <div className="border-b border-ink bg-paper-2">
+        <div className="max-w-350 mx-auto px-6 md:px-10 py-4 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.22em]">
+          <span>
+            <span className="text-accent mr-2">03</span>Experience
+          </span>
+          <span className="text-ink/60 hidden sm:inline">
+            Career · 2019 → Present
+          </span>
+        </div>
+      </div>
 
-      <div className="max-w-3xl mx-auto">
+      <div className="max-w-350 mx-auto px-6 md:px-10 py-24 md:py-32">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-16"
+          className="grid lg:grid-cols-12 gap-y-12 gap-x-10 mb-16"
         >
-          <motion.span
-            variants={fadeInUp}
-            className="text-violet-400 text-sm font-semibold tracking-widest uppercase"
-          >
-            Where I've Worked
-          </motion.span>
           <motion.h2
             variants={fadeInUp}
-            className="text-5xl md:text-6xl font-black mt-3"
+            className="display text-[clamp(2.75rem,6vw,5.5rem)] text-ink lg:col-span-8"
           >
-            Career{" "}
-            <span className="bg-linear-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
-              History
+            Five companies. Two countries.
+            <br />
+            One{" "}
+            <span className="not-italic font-normal text-accent">
+              throughline
             </span>
+            .
           </motion.h2>
+          <motion.p
+            variants={fadeInUp}
+            className="lg:col-span-4 lg:self-end text-ink/70 text-base leading-relaxed border-l-2 border-ink pl-5 font-mono"
+          >
+            From Django interns at a Kathmandu studio to Lambdas at a Brisbane
+            travel group — the medium changes, the discipline doesn't.
+          </motion.p>
         </motion.div>
 
-        <motion.div
+        <motion.ol
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="relative"
+          className="border-t-2 border-ink"
         >
-          {/* Vertical timeline line */}
-          <div className="absolute left-6 top-2 bottom-2 w-px bg-linear-to-b from-violet-500/60 via-violet-500/20 to-transparent md:left-8" />
+          {EXPERIENCE.map((job, i) => (
+            <motion.li
+              key={`${job.company}-${job.title}`}
+              variants={fadeInUp}
+              className="group grid lg:grid-cols-12 gap-y-3 gap-x-6 py-8 border-b-2 border-ink relative"
+            >
+              {/* Index */}
+              <div className="lg:col-span-1 font-mono text-xs uppercase tracking-[0.2em] text-ink/60 flex items-start gap-2">
+                <span>{String(EXPERIENCE.length - i).padStart(2, "0")}</span>
+                {i === 0 && (
+                  <span className="inline-flex h-1.5 w-1.5 rounded-full bg-accent status-dot mt-2" />
+                )}
+              </div>
 
-          <div className="space-y-10">
-            {EXPERIENCE.map((job, i) => (
-              <motion.div
-                key={`${job.company}-${job.title}`}
-                variants={fadeInUp}
-                className="relative pl-16 md:pl-20"
-              >
-                {/* Timeline dot */}
-                <div className="absolute left-4.5 top-1.5 flex h-4.5 w-4.5 items-center justify-center rounded-full border-2 border-violet-500 bg-[#050508] md:left-6.5">
-                  <div
-                    className={`h-2 w-2 rounded-full ${i === 0 ? "animate-pulse bg-violet-400" : "bg-violet-600"}`}
-                  />
-                </div>
+              {/* Period */}
+              <div className="lg:col-span-3 font-mono text-sm text-ink/80">
+                <p className="uppercase tracking-[0.12em] text-[11px] text-ink/55 mb-1">
+                  Period
+                </p>
+                {job.period}
+                {job.location && (
+                  <p className="text-[11px] text-ink/55 mt-1">{job.location}</p>
+                )}
+              </div>
 
-                <div className="group rounded-2xl border border-white/8 bg-white/3 p-6 transition-[border-color,background-color] duration-200 hover:border-white/20 hover:bg-white/6">
-                  <div className="mb-3 flex flex-wrap items-start justify-between gap-2">
-                    <div>
-                      <h3 className="text-lg font-bold text-white">
-                        {job.title}
-                      </h3>
-                      <div className="mt-0.5 flex items-center gap-2 text-sm text-violet-400">
-                        <FiBriefcase size={13} />
-                        <span className="font-medium">{job.company}</span>
-                        {job.type && (
-                          <span className="rounded-full border border-violet-500/30 bg-violet-500/10 px-2 py-0.5 text-xs text-violet-300">
-                            {job.type}
-                          </span>
-                        )}
-                      </div>
-                    </div>
-                    <div className="text-right">
-                      <p className="text-sm font-medium text-gray-400">
-                        {job.period}
-                      </p>
-                      {job.location && (
-                        <p className="mt-0.5 text-xs text-gray-600">
-                          {job.location}
-                        </p>
-                      )}
-                    </div>
-                  </div>
-
-                  {job.bullets && job.bullets.length > 0 && (
-                    <ul className="mt-3 space-y-1.5 border-t border-white/6 pt-3">
-                      {job.bullets.map((b) => (
-                        <li
-                          key={b}
-                          className="flex items-start gap-2.5 text-sm text-gray-400"
-                        >
-                          <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-violet-500/70" />
-                          {b}
-                        </li>
-                      ))}
-                    </ul>
+              {/* Role + company */}
+              <div className="lg:col-span-5">
+                <h3 className="display text-3xl md:text-4xl text-ink leading-tight transition-colors duration-150 group-hover:text-accent">
+                  {job.title}
+                </h3>
+                <p className="font-mono text-sm text-ink/70 mt-1 flex flex-wrap items-center gap-2">
+                  <span className="text-ink font-semibold uppercase tracking-widest text-xs">
+                    {job.company}
+                  </span>
+                  {job.type && (
+                    <span className="border border-ink/40 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink/70">
+                      {job.type}
+                    </span>
                   )}
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
+                </p>
+              </div>
+
+              {/* Bullets */}
+              {job.bullets && job.bullets.length > 0 && (
+                <ul className="lg:col-span-3 space-y-2">
+                  {job.bullets.map((b) => (
+                    <li
+                      key={b}
+                      className="text-sm text-ink/75 leading-relaxed flex gap-2"
+                    >
+                      <span className="text-accent shrink-0">→</span>
+                      <span>{b}</span>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </motion.li>
+          ))}
+        </motion.ol>
       </div>
     </section>
   );

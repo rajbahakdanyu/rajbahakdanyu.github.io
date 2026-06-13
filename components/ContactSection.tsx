@@ -2,145 +2,131 @@
 
 import { motion } from "framer-motion";
 import { useState } from "react";
-import { FiCheck, FiCopy, FiMail } from "react-icons/fi";
-import { fadeInUp, scaleIn, staggerContainer } from "@/lib/animations";
+import { FiArrowUpRight, FiCheck, FiCopy } from "react-icons/fi";
+import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { CONNECT } from "@/lib/data";
+
+const EMAIL = "rajbahakdanyu@gmail.com";
 
 export default function ContactSection() {
   const [copied, setCopied] = useState(false);
 
   const copyEmail = () => {
-    navigator.clipboard.writeText("rajbahakdanyu@gmail.com");
+    navigator.clipboard.writeText(EMAIL);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   };
 
   return (
-    <section id="contact" className="relative py-32 px-6">
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-violet-500/40 to-transparent" />
-
-      {/* Background glow */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute bottom-0 left-1/2 w-[600px] h-[300px] rounded-full bg-violet-700 blur-[120px] will-change-transform"
-          style={{ animation: "glow-pulse 8s ease-in-out infinite" }}
-        />
+    <section id="contact" className="relative border-b border-ink bg-paper-2">
+      <div className="border-b border-ink bg-paper">
+        <div className="max-w-350 mx-auto px-6 md:px-10 py-4 flex items-baseline justify-between font-mono text-[11px] uppercase tracking-[0.22em]">
+          <span>
+            <span className="text-accent mr-2">06</span>Contact
+          </span>
+          <span className="text-ink/60 hidden sm:inline">
+            Mail · Networks · Reply within 24h
+          </span>
+        </div>
       </div>
 
-      <div className="max-w-4xl mx-auto relative z-10">
-        <motion.div
-          variants={staggerContainer}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="text-center mb-14"
-        >
-          <motion.span
-            variants={fadeInUp}
-            className="text-violet-400 text-sm font-semibold tracking-widest uppercase"
-          >
-            Let's Talk
-          </motion.span>
-          <motion.h2
-            variants={fadeInUp}
-            className="text-5xl md:text-6xl font-black mt-3 mb-6"
-          >
-            Get In{" "}
-            <span className="bg-gradient-to-r from-violet-400 to-pink-400 bg-clip-text text-transparent">
-              Touch
-            </span>
-          </motion.h2>
-          <motion.p
-            variants={fadeInUp}
-            className="text-gray-400 text-xl max-w-lg mx-auto leading-relaxed"
-          >
-            Have a project in mind or just want to chat? I'd love to hear from
-            you. My inbox is always open.
-          </motion.p>
-        </motion.div>
+      <div className="max-w-350 mx-auto px-6 md:px-10 py-24 md:py-36 relative">
+        {/* dot field */}
+        <div className="absolute inset-0 dot-field pointer-events-none opacity-50" />
 
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-80px" }}
-          className="grid sm:grid-cols-3 gap-5 mb-12"
+          className="relative grid lg:grid-cols-12 gap-y-14 gap-x-10 items-end"
         >
-          {CONNECT.map((item) => {
-            const isEmail = item.href.startsWith("mailto");
-            if (isEmail) {
-              return (
-                <motion.button
-                  type="button"
-                  key={item.title}
-                  onClick={copyEmail}
-                  variants={scaleIn}
-                  className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
-                >
-                  <div
-                    className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
-                  />
-                  <div
-                    className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4 transition-transform duration-200`}
-                  >
-                    {copied ? (
-                      <FiCheck size={24} className="text-white" />
-                    ) : (
-                      <item.icon size={24} className="text-white" />
-                    )}
-                  </div>
-                  <h3 className="text-white font-bold mb-1.5">{item.title}</h3>
-                  <p className="text-gray-500 text-sm">
-                    {copied ? "Copied!" : item.description}
+          <motion.div variants={fadeInUp} className="lg:col-span-8">
+            <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink/60 mb-6 flex items-center gap-2">
+              <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-accent" />
+              Available · Q3 2026
+            </p>
+            <h2 className="display text-[clamp(3rem,9vw,9rem)] text-ink leading-[0.88]">
+              Let's
+              <br />
+              <span className="not-italic font-normal underline decoration-accent decoration-[6px] underline-offset-14">
+                build
+              </span>{" "}
+              something.
+            </h2>
+          </motion.div>
+
+          <motion.div
+            variants={fadeInUp}
+            className="lg:col-span-4 border-l-2 border-ink pl-5 font-mono text-sm text-ink/80 leading-relaxed"
+          >
+            Got a brief, an idea, or a half-formed thought you want to test
+            against an engineer? My inbox is open. I'll write back like a human.
+          </motion.div>
+
+          {/* Email block — the hero of this section */}
+          <motion.div variants={fadeInUp} className="lg:col-span-12">
+            <button
+              type="button"
+              onClick={copyEmail}
+              className="group w-full block border-2 border-ink bg-paper hover:bg-ink hover:text-paper transition-colors duration-200 p-6 md:p-10 text-left"
+              aria-label="Copy email"
+            >
+              <div className="flex items-center justify-between gap-6 flex-wrap">
+                <div className="min-w-0 flex-1">
+                  <p className="font-mono text-[11px] uppercase tracking-[0.22em] text-ink/55 group-hover:text-paper/60 mb-3">
+                    Write to
                   </p>
-                  <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
-                    {copied ? (
-                      <FiCheck size={13} className="text-emerald-400" />
-                    ) : (
-                      <FiCopy size={13} className="text-gray-500" />
-                    )}
-                  </div>
-                </motion.button>
-              );
-            }
-            return (
-              <motion.a
+                  <p className="font-display italic text-[clamp(1.75rem,5vw,4.5rem)] leading-none text-ink group-hover:text-paper truncate">
+                    {EMAIL}
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 font-mono text-xs uppercase tracking-[0.18em] shrink-0">
+                  {copied ? (
+                    <>
+                      <FiCheck size={18} className="text-accent" /> Copied
+                    </>
+                  ) : (
+                    <>
+                      <FiCopy size={16} /> Click to copy
+                    </>
+                  )}
+                </div>
+              </div>
+            </button>
+          </motion.div>
+
+          {/* Connect channels */}
+          <motion.div
+            variants={fadeInUp}
+            className="lg:col-span-12 grid sm:grid-cols-3 gap-px bg-ink border-2 border-ink"
+          >
+            {CONNECT.map((item) => (
+              <a
                 key={item.title}
                 href={item.href}
-                target="_blank"
+                target={item.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
-                variants={scaleIn}
-                className="group relative p-7 rounded-2xl border border-white/[0.08] bg-white/[0.04] backdrop-blur-sm hover:border-white/20 hover:-translate-y-2 hover:scale-[1.03] transition-[transform,border-color] duration-200 text-center overflow-hidden will-change-transform"
+                className="group bg-paper p-6 hover:bg-accent transition-colors duration-150 flex items-center justify-between gap-4"
               >
-                <div
-                  className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-[0.08] transition-opacity duration-300`}
-                />
-                <div
-                  className={`w-14 h-14 rounded-2xl bg-gradient-to-br ${item.gradient} flex items-center justify-center mx-auto mb-4`}
-                >
-                  <item.icon size={24} className="text-white" />
+                <div className="flex items-center gap-4">
+                  <item.icon size={22} className="text-ink" />
+                  <div>
+                    <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-ink/55 group-hover:text-ink/70">
+                      {item.title}
+                    </p>
+                    <p className="font-mono text-sm text-ink mt-0.5">
+                      {item.description}
+                    </p>
+                  </div>
                 </div>
-                <h3 className="text-white font-bold mb-1.5">{item.title}</h3>
-                <p className="text-gray-500 text-sm">{item.description}</p>
-              </motion.a>
-            );
-          })}
-        </motion.div>
-
-        <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-80px" }}
-          className="flex justify-center"
-        >
-          <a
-            href="mailto:rajbahakdanyu@gmail.com"
-            className="inline-flex items-center gap-3 rounded-full bg-gradient-to-r from-violet-600 to-purple-600 px-10 py-4 text-lg font-semibold text-white transition-[transform,box-shadow] duration-200 hover:scale-105 hover:shadow-[0_0_45px_rgba(124,58,237,0.5)]"
-          >
-            <FiMail size={20} />
-            Send Me a Message
-          </a>
+                <FiArrowUpRight
+                  size={18}
+                  className="text-ink/60 group-hover:text-ink transition-transform duration-150 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </a>
+            ))}
+          </motion.div>
         </motion.div>
       </div>
     </section>

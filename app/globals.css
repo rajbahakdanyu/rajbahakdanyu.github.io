@@ -3,77 +3,113 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: var(--font-display), ui-serif, Georgia, serif;
+  --font-sans: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, monospace;
+
+  --color-paper: #ece4d4;
+  --color-paper-2: #e2d8c2;
+  --color-ink: #0c0b08;
+  --color-ink-2: #2a2620;
+  --color-muted: #6b6557;
+  --color-rule: #0c0b08;
+  --color-accent: #ff4e1f;
+  --color-accent-2: #1b1a16;
+}
+
 html {
   scroll-behavior: smooth;
+  background: var(--color-paper);
+  color: var(--color-ink);
 }
 
-/* Custom scrollbar */
+body {
+  font-family: var(--font-sans);
+  background: var(--color-paper);
+  color: var(--color-ink);
+}
+
+/* ─── Scrollbar ─── */
 ::-webkit-scrollbar {
-  width: 6px;
+  width: 10px;
 }
 ::-webkit-scrollbar-track {
-  background: #050508;
+  background: var(--color-paper);
 }
 ::-webkit-scrollbar-thumb {
-  background: #3b3b4f;
-  border-radius: 99px;
+  background: var(--color-ink);
+  border: 2px solid var(--color-paper);
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #7c3aed;
+  background: var(--color-accent);
 }
-
-/* Firefox */
 * {
   scrollbar-width: thin;
-  scrollbar-color: #3b3b4f #050508;
+  scrollbar-color: var(--color-ink) var(--color-paper);
 }
-/* Selection */
+
+/* ─── Selection ─── */
 ::selection {
-  background: rgba(124, 58, 237, 0.35);
-  color: #fff;
+  background: var(--color-accent);
+  color: var(--color-paper);
 }
 
-/* ─── Compositor-thread animations for background orbs ─── */
-@keyframes orb-float-a {
-  0%,
-  100% {
-    transform: translate(0, 0);
+/* ─── Marquee for skills ticker ─── */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
   }
-  50% {
-    transform: translate(60px, -40px);
-  }
-}
-@keyframes orb-float-b {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(-60px, 50px);
+  to {
+    transform: translateX(-50%);
   }
 }
-@keyframes orb-float-c {
-  0%,
-  100% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(40px, 35px);
-  }
+.marquee-track {
+  animation: marquee 38s linear infinite;
+  will-change: transform;
 }
-@keyframes glow-pulse {
-  0%,
-  100% {
-    transform: translateX(-50%) scale(1);
-    opacity: 0.07;
-  }
-  50% {
-    transform: translateX(-50%) scale(1.15);
-    opacity: 0.14;
-  }
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
 }
 
-/* ─── Noise / grain overlay ─── */
+/* ─── Subtle pulse for status dot ─── */
+@keyframes status-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 78, 31, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 78, 31, 0);
+  }
+}
+.status-dot {
+  animation: status-pulse 2s ease-out infinite;
+}
+
+/* ─── Caret blink for hero ─── */
+@keyframes blink {
+  0%,
+  49% {
+    opacity: 1;
+  }
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+.caret {
+  animation: blink 1s steps(1) infinite;
+}
+
+/* ─── Halftone dot field ─── */
+.dot-field {
+  background-image: radial-gradient(var(--color-ink) 1px, transparent 1px);
+  background-size: 18px 18px;
+  background-position: 0 0;
+  opacity: 0.18;
+}
+
+/* ─── Grain overlay ─── */
 body::after {
   content: "";
   position: fixed;
@@ -82,7 +118,38 @@ body::after {
   height: 100dvh;
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.035;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23noise)'/%3E%3C/svg%3E");
+  opacity: 0.09;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='256' height='256'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='256' height='256' filter='url(%23n)'/%3E%3C/svg%3E");
   background-size: 256px 256px;
+}
+
+/* ─── Reusable brutalist primitives ─── */
+.hard-shadow {
+  box-shadow: 6px 6px 0 0 var(--color-ink);
+  transition:
+    transform 0.18s ease,
+    box-shadow 0.18s ease;
+}
+.hard-shadow:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 10px 10px 0 0 var(--color-ink);
+}
+.hard-shadow-accent {
+  box-shadow: 6px 6px 0 0 var(--color-accent);
+}
+
+/* ─── Display heading defaults ─── */
+.display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-style: italic;
+  letter-spacing: -0.04em;
+  line-height: 0.88;
+}
+.eyebrow {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
 }

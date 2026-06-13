@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { FiGithub, FiLinkedin, FiMail } from "react-icons/fi";
 
 const SOCIAL_LINKS = [
@@ -15,19 +14,20 @@ const SOCIAL_LINKS = [
 
 export default function Footer() {
   return (
-    <footer className="relative py-10 px-6 border-t border-white/6">
-      <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-        <Image
-          src="/logo.svg"
-          alt="Logo"
-          width={32}
-          height={32}
-          className="opacity-50"
-        />
-        <p className="text-gray-600 text-sm">
-          © {new Date().getFullYear()} Danyu Rajbahak. All rights reserved.
+    <footer className="relative bg-ink text-paper">
+      {/* Massive footer wordmark */}
+      <div className="border-b border-paper/15 overflow-hidden">
+        <p className="display text-[clamp(5rem,22vw,18rem)] leading-[0.85] text-paper px-6 md:px-10 py-10 select-none">
+          Rajbahak<span className="text-accent not-italic font-normal">.</span>
         </p>
-        <div className="flex items-center gap-4">
+      </div>
+
+      <div className="max-w-350 mx-auto px-6 md:px-10 py-8 grid sm:grid-cols-3 gap-6 items-center font-mono text-[11px] uppercase tracking-[0.2em] text-paper/70">
+        <p>© {new Date().getFullYear()} D. Rajbahak</p>
+        <p className="sm:text-center">
+          Hand-built · Next.js · Tailwind v4 · 2026
+        </p>
+        <div className="flex items-center gap-4 sm:justify-end">
           {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
             <a
               key={href}
@@ -35,9 +35,9 @@ export default function Footer() {
               target={href.startsWith("mailto") ? undefined : "_blank"}
               rel="noopener noreferrer"
               aria-label={label}
-              className="text-gray-600 hover:text-gray-300 transition-colors duration-200"
+              className="text-paper/70 hover:text-accent transition-colors duration-150"
             >
-              <Icon size={17} />
+              <Icon size={16} />
             </a>
           ))}
         </div>

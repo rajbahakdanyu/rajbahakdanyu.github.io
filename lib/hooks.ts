@@ -10,7 +10,7 @@ export function useActiveSection() {
   const [active, setActive] = useState("");
   useEffect(() => {
     const handler = () => {
-      const sections = ["about", "skills", "projects", "contact"];
+      const sections = ["about", "experience", "skills", "projects", "contact"];
       for (const id of [...sections].reverse()) {
         const el = document.getElementById(id);
         if (el && window.scrollY + 140 >= el.offsetTop) {

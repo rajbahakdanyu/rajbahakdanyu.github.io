@@ -1,25 +1,34 @@
 import type { Metadata } from "next";
-import { Noto_Sans, Noto_Sans_Mono } from "next/font/google";
+import { Fraunces, Inter, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const notoSans = Noto_Sans({
-  variable: "--font-noto-sans",
+const display = Fraunces({
+  variable: "--font-display",
   subsets: ["latin"],
+  display: "swap",
 });
 
-const notoMono = Noto_Sans_Mono({
-  variable: "--font-noto-mono",
+const sans = Inter({
+  variable: "--font-sans",
   subsets: ["latin"],
+  display: "swap",
+});
+
+const mono = JetBrains_Mono({
+  variable: "--font-mono",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "Danyu Rajbahak",
+  title: "Danyu Rajbahak — Full-Stack Engineer",
   description:
-    "Full-stack developer. Explore my projects, skills and get in touch.",
+    "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
   metadataBase: new URL("https://rajbahakdanyu.github.io"),
   openGraph: {
-    title: "Danyu Rajbahak",
-    description: "Full-stack developer",
+    title: "Danyu Rajbahak — Full-Stack Engineer",
+    description:
+      "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
     url: "/portfolio",
     siteName: "Danyu Rajbahak",
     locale: "en_US",
@@ -32,7 +41,7 @@ const jsonLd = {
   "@type": "Person",
   name: "Danyu Rajbahak",
   url: "https://rajbahakdanyu.github.io/portfolio",
-  jobTitle: "Full-Stack Developer",
+  jobTitle: "Full-Stack Engineer",
   sameAs: [
     "https://github.com/rajbahakdanyu",
     "https://linkedin.com/in/danyu-rajbahak",
@@ -53,7 +62,9 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${notoSans.variable} ${notoMono.variable} antialiased`}>
+      <body
+        className={`${display.variable} ${sans.variable} ${mono.variable} antialiased`}
+      >
         {children}
       </body>
     </html>

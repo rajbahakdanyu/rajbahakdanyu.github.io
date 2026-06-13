@@ -21,135 +21,170 @@ export default function HeroSection() {
     target: ref,
     offset: ["start start", "end start"],
   });
-  const y = useTransform(scrollYProgress, [0, 1], [0, -80]);
-  const opacity = useTransform(scrollYProgress, [0, 0.75], [1, 0]);
+  const y = useTransform(scrollYProgress, [0, 1], [0, -60]);
+  const opacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
 
   return (
     <section
       ref={ref}
-      className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden"
+      className="relative min-h-screen overflow-hidden border-b border-ink"
     >
-      {/* Animated gradient orbs — pure CSS so they run on the compositor */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div
-          className="absolute top-1/4 left-1/4 w-125 h-125 rounded-full bg-violet-700/20 blur-[130px] will-change-transform"
-          style={{ animation: "orb-float-a 14s ease-in-out infinite" }}
-        />
-        <div
-          className="absolute bottom-1/4 right-1/4 w-105 h-105 rounded-full bg-indigo-700/20 blur-[110px] will-change-transform"
-          style={{ animation: "orb-float-b 18s ease-in-out infinite" }}
-        />
-        <div
-          className="absolute top-1/2 right-1/3 w-72 h-72 rounded-full bg-pink-700/15 blur-[90px] will-change-transform"
-          style={{ animation: "orb-float-c 11s ease-in-out infinite" }}
-        />
-      </div>
+      {/* dot field background */}
+      <div className="absolute inset-0 dot-field pointer-events-none" />
 
-      {/* Subtle grid */}
-      <div
-        className="absolute inset-0 opacity-[0.025]"
-        style={{
-          backgroundImage:
-            "linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px)",
-          backgroundSize: "72px 72px",
-        }}
-      />
+      {/* Top metadata bar */}
+      <div className="absolute top-20 left-0 right-0 z-10 px-6 md:px-10">
+        <div className="max-w-350 mx-auto flex items-center justify-between font-mono text-[10px] uppercase tracking-[0.22em] text-ink/70">
+          <div className="flex items-center gap-3">
+            <span>N° 01</span>
+            <span className="text-ink/30">/</span>
+            <span>Index</span>
+          </div>
+          <div className="hidden sm:flex items-center gap-3">
+            <span>27°S 153°E</span>
+            <span className="text-ink/30">/</span>
+            <span>Brisbane, AU</span>
+          </div>
+        </div>
+      </div>
 
       <motion.div
         style={{ y, opacity }}
-        className="relative z-10 text-center px-6 max-w-5xl mx-auto will-change-[transform,opacity]"
+        className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 pt-40 pb-24 will-change-[transform,opacity]"
       >
-        {/* Name */}
-        <motion.h1
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4, duration: 0.9, ease: "easeOut" }}
-          className="text-7xl md:text-[108px] lg:text-[120px] font-black leading-none tracking-tight mb-4"
-        >
-          <span className="bg-linear-to-br from-white via-white to-gray-400 bg-clip-text text-transparent">
-            Danyu
-          </span>
-          <br />
-          <span className="bg-linear-to-r from-violet-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-            Rajbahak
-          </span>
-        </motion.h1>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.6, duration: 0.7 }}
-          className="text-xl md:text-2xl text-gray-400 mb-10 max-w-xl mx-auto leading-relaxed"
-        >
-          Full Stack Developer crafting{" "}
-          <span className="text-white font-medium">
-            beautiful digital experiences
-          </span>{" "}
-          with modern tech.
-        </motion.p>
-
-        {/* CTAs */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.8, duration: 0.7 }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14"
-        >
-          <button
-            type="button"
-            onClick={() => scrollToSection("projects")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full bg-linear-to-r from-violet-600 to-purple-600 text-white font-semibold tracking-wide hover:scale-105 hover:shadow-[0_0_35px_rgba(124,58,237,0.45)] transition-[transform,box-shadow] duration-200"
+        <div className="max-w-350 w-full mx-auto">
+          {/* Eyebrow */}
+          <motion.div
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="flex items-center gap-3 mb-10 font-mono text-xs uppercase tracking-[0.25em] text-ink/70"
           >
-            View My Work
-          </button>
-          <button
-            type="button"
-            onClick={() => scrollToSection("contact")}
-            className="w-full sm:w-auto px-8 py-3.5 rounded-full border border-white/20 text-white font-semibold tracking-wide hover:bg-white/8 hover:border-white/40 hover:scale-105 transition-[transform,border-color,background-color] duration-200"
-          >
-            Get In Touch
-          </button>
-        </motion.div>
+            <span className="h-px w-10 bg-ink" />
+            Portfolio
+            <span className="text-accent">·</span>
+            MMXXVI
+          </motion.div>
 
-        {/* Social links */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.0, duration: 0.7 }}
-          className="flex items-center justify-center gap-4"
-        >
-          {SOCIAL_LINKS.map(({ icon: Icon, href, label }) => (
-            <a
-              key={href}
-              href={href}
-              target={href.startsWith("mailto") ? undefined : "_blank"}
-              rel="noopener noreferrer"
-              aria-label={label}
-              className="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center text-gray-400 hover:text-white hover:border-white/50 hover:bg-white/6 hover:scale-110 transition-[transform,color,border-color,background-color] duration-150"
+          {/* Massive name */}
+          <h1 className="display text-[clamp(4.5rem,15vw,16rem)] text-ink">
+            <motion.span
+              initial={{ opacity: 0, y: 40, rotate: -1 }}
+              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
+              className="block"
             >
-              <Icon size={18} />
-            </a>
-          ))}
-        </motion.div>
+              Danyu<span className="not-italic font-normal">.</span>
+            </motion.span>
+            <motion.span
+              initial={{ opacity: 0, y: 40, rotate: 1 }}
+              animate={{ opacity: 1, y: 0, rotate: 0 }}
+              transition={{ duration: 0.7, delay: 0.3, ease: "easeOut" }}
+              className="block pl-[8vw] -mt-[0.08em]"
+            >
+              <span className="relative">
+                Rajbahak
+                <span className="absolute -right-[0.18em] top-0 text-accent not-italic font-normal">
+                  *
+                </span>
+              </span>
+            </motion.span>
+          </h1>
+
+          {/* Sub block */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.55 }}
+            className="mt-12 grid md:grid-cols-12 gap-8 items-end"
+          >
+            {/* Footnote-style description */}
+            <div className="md:col-span-7 lg:col-span-6 border-l-2 border-ink pl-5">
+              <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink/60 mb-2">
+                * Full-Stack Engineer
+              </p>
+              <p className="text-lg md:text-xl text-ink leading-snug max-w-xl">
+                I build software that is{" "}
+                <span className="font-display italic">fast</span>,{" "}
+                <span className="font-display italic">considered</span>, and
+                actually{" "}
+                <span className="underline decoration-accent decoration-[3px] underline-offset-4">
+                  ships
+                </span>
+                . Currently shipping travel platforms at scale from Brisbane.
+              </p>
+            </div>
+
+            {/* Actions */}
+            <div className="md:col-span-5 lg:col-span-6 flex flex-col md:items-end gap-4">
+              <div className="flex flex-wrap gap-3">
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("projects")}
+                  className="group inline-flex items-center gap-3 border-2 border-ink bg-ink text-paper px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] hard-shadow-accent transition-all duration-150 hover:-translate-x-0.5 hover:-translate-y-0.5"
+                  style={{ boxShadow: "6px 6px 0 0 var(--color-accent)" }}
+                >
+                  See the work
+                  <span className="transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </button>
+                <button
+                  type="button"
+                  onClick={() => scrollToSection("contact")}
+                  className="inline-flex items-center gap-3 border-2 border-ink bg-paper text-ink px-6 py-3 font-mono text-xs uppercase tracking-[0.18em] hover:bg-ink hover:text-paper transition-colors duration-150"
+                >
+                  Say hello
+                </button>
+              </div>
+
+              {/* Social bracket */}
+              <div className="flex items-center gap-1 font-mono text-xs text-ink/70">
+                <span className="text-ink/40">[</span>
+                {SOCIAL_LINKS.map(({ icon: Icon, href, label }, i) => (
+                  <span key={href} className="flex items-center">
+                    {i > 0 && <span className="mx-1 text-ink/30">·</span>}
+                    <a
+                      href={href}
+                      target={href.startsWith("mailto") ? undefined : "_blank"}
+                      rel="noopener noreferrer"
+                      aria-label={label}
+                      className="inline-flex h-7 w-7 items-center justify-center text-ink hover:text-accent transition-colors duration-150"
+                    >
+                      <Icon size={14} />
+                    </a>
+                  </span>
+                ))}
+                <span className="text-ink/40">]</span>
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </motion.div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator (bottom-left corner) */}
       <motion.button
         onClick={() => scrollToSection("about")}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.3 }}
+        transition={{ delay: 1.1 }}
         aria-label="Scroll down"
-        className="absolute bottom-10 left-1/2 -translate-x-1/2 text-gray-600 hover:text-gray-300 transition-colors"
+        className="absolute bottom-6 left-6 md:left-10 z-10 flex items-center gap-2 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/70 hover:text-ink transition-colors"
       >
-        <motion.div
-          animate={{ y: [0, 8, 0] }}
+        <motion.span
+          animate={{ y: [0, 4, 0] }}
           transition={{ duration: 1.6, repeat: Infinity, ease: "easeInOut" }}
+          className="inline-flex"
         >
-          <FiArrowDown size={22} />
-        </motion.div>
+          <FiArrowDown size={14} />
+        </motion.span>
+        Scroll
       </motion.button>
+
+      {/* Right rail timestamp */}
+      <div className="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/70">
+        v.2026.06 <span className="text-accent">●</span>
+      </div>
     </section>
   );
 }

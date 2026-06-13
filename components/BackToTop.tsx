@@ -19,14 +19,14 @@ export default function BackToTop() {
         <motion.button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: 16 }}
           transition={{ duration: 0.2 }}
           aria-label="Back to top"
-          className="fixed right-8 bottom-8 z-50 rounded-full bg-violet-600 p-3.5 text-white shadow-[0_0_20px_rgba(124,58,237,0.45)] transition-[transform,background-color] duration-200 hover:scale-110 hover:bg-violet-500 will-change-transform"
+          className="fixed right-5 bottom-5 z-50 inline-flex items-center gap-2 border-2 border-ink bg-paper px-3.5 py-2.5 font-mono text-[10px] uppercase tracking-[0.2em] text-ink hard-shadow hover:bg-ink hover:text-paper transition-colors duration-150"
         >
-          <FiArrowUp size={18} />
+          <FiArrowUp size={13} /> Top
         </motion.button>
       )}
     </AnimatePresence>
