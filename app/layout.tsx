@@ -21,12 +21,12 @@ const mono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Danyu Rajbahak — Full-Stack Engineer",
+  title: "Danyu Rajbahak | Full-Stack Engineer",
   description:
     "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
   metadataBase: new URL("https://rajbahakdanyu.github.io"),
   openGraph: {
-    title: "Danyu Rajbahak — Full-Stack Engineer",
+    title: "Danyu Rajbahak | Full-Stack Engineer",
     description:
       "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
     url: "/portfolio",
