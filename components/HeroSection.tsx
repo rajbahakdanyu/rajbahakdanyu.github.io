@@ -61,7 +61,7 @@ export default function HeroSection() {
               transition={{ duration: 0.7, delay: 0.15, ease: "easeOut" }}
               className="block"
             >
-              Danyu<span className="not-italic font-normal">.</span>
+              Danyu
             </motion.span>
             <motion.span
               initial={{ opacity: 0, y: 40, rotate: 1 }}

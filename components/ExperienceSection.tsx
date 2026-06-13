@@ -87,11 +87,6 @@ export default function ExperienceSection() {
                   <span className="text-ink font-semibold uppercase tracking-widest text-xs">
                     {job.company}
                   </span>
-                  {job.type && (
-                    <span className="border border-ink/40 px-1.5 py-0.5 text-[10px] uppercase tracking-[0.18em] text-ink/70">
-                      {job.type}
-                    </span>
-                  )}
                 </p>
               </div>
 
