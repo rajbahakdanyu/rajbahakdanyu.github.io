@@ -53,19 +53,6 @@ export default function HeroSection() {
         className="relative z-10 min-h-screen flex flex-col justify-center px-6 md:px-10 pt-40 pb-24 will-change-[transform,opacity]"
       >
         <div className="max-w-350 w-full mx-auto">
-          {/* Eyebrow */}
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="flex items-center gap-3 mb-10 font-mono text-xs uppercase tracking-[0.25em] text-ink/70"
-          >
-            <span className="h-px w-10 bg-ink" />
-            Portfolio
-            <span className="text-accent">·</span>
-            MMXXVI
-          </motion.div>
-
           {/* Massive name */}
           <h1 className="display text-[clamp(4.5rem,15vw,16rem)] text-ink">
             <motion.span

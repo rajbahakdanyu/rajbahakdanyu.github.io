@@ -38,9 +38,6 @@ export default function Navbar() {
           <span className="inline-flex h-7 w-7 items-center justify-center bg-ink text-paper font-display italic text-base leading-none">
             d
           </span>
-          <span className="font-mono text-[11px] uppercase tracking-[0.2em] text-ink hidden sm:inline">
-            Rajbahak<span className="text-accent">/</span>2026
-          </span>
         </button>
 
         {/* Desktop links */}
