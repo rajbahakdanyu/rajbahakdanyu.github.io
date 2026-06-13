@@ -166,12 +166,6 @@ export default function ProjectsSection() {
                 </span>
                 .
               </p>
-              <p className="mt-8 text-ink/70 max-w-lg mx-auto">
-                Got four ideas I'm chipping away at right now: an AI itinerary
-                planner, a real-time event booking thing, a URL shortener with
-                proper analytics, and a job-application tracker. Email me if you
-                want a sneak peek before they're done.
-              </p>
               <div className="mt-10 inline-flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.22em] text-ink">
                 <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-accent" />
                 Drop / 2026

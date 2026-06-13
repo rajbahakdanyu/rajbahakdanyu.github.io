@@ -33,7 +33,7 @@ export default function ContactSection() {
           <motion.div variants={fadeInUp} className="lg:col-span-8">
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-ink/60 mb-6 flex items-center gap-2">
               <span className="status-dot inline-block h-1.5 w-1.5 rounded-full bg-accent" />
-              Available · Q3 2026
+              Available
             </p>
             <h2 className="display text-[clamp(3rem,9vw,9rem)] text-ink leading-[0.88]">
               Let's

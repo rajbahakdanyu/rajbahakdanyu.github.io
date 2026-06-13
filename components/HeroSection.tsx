@@ -175,11 +175,6 @@ export default function HeroSection() {
         </motion.span>
         Scroll
       </motion.button>
-
-      {/* Right rail timestamp */}
-      <div className="absolute bottom-6 right-6 md:right-10 z-10 font-mono text-[10px] uppercase tracking-[0.25em] text-ink/70">
-        v.2026.06 <span className="text-accent">●</span>
-      </div>
     </section>
   );
 }
