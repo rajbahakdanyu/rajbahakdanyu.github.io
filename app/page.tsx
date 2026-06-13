@@ -13,7 +13,7 @@ export default function PortfolioWebsite() {
   return (
     <>
       <ScrollProgress />
-      <main className="min-h-screen bg-paper text-ink font-sans selection:bg-accent selection:text-paper">
+      <main className="relative min-h-screen bg-paper text-ink font-sans selection:bg-accent selection:text-paper">
         <Navbar />
         <HeroSection />
         <AboutSection />
