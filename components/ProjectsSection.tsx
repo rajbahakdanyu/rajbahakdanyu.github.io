@@ -5,6 +5,7 @@ import type { IconType } from "react-icons";
 import { FiArrowUpRight, FiCpu, FiGithub } from "react-icons/fi";
 import {
   SiD3,
+  SiGo,
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
@@ -12,13 +13,18 @@ import {
   SiReact,
   SiSocketdotio,
   SiStripe,
+  SiSvelte,
   SiTypescript,
+  SiWails,
 } from "react-icons/si";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
 import { PROJECTS } from "@/lib/data";
 
 const TAG_ICONS: Record<string, IconType> = {
   "Next.js": SiNextdotjs,
+  Go: SiGo,
+  Wails: SiWails,
+  Svelte: SiSvelte,
   TypeScript: SiTypescript,
   React: SiReact,
   "Node.js": SiNodedotjs,
