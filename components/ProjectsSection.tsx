@@ -2,13 +2,12 @@
 
 import { motion } from "framer-motion";
 import type { IconType } from "react-icons";
-import { FiArrowUpRight, FiGithub } from "react-icons/fi";
+import { FiArrowUpRight, FiCpu, FiGithub } from "react-icons/fi";
 import {
   SiD3,
   SiMongodb,
   SiNextdotjs,
   SiNodedotjs,
-  SiOpenai,
   SiPostgresql,
   SiReact,
   SiSocketdotio,
@@ -26,7 +25,7 @@ const TAG_ICONS: Record<string, IconType> = {
   PostgreSQL: SiPostgresql,
   MongoDB: SiMongodb,
   Stripe: SiStripe,
-  "OpenAI API": SiOpenai,
+  "OpenAI API": FiCpu,
   "Socket.io": SiSocketdotio,
   "D3.js": SiD3,
 };

@@ -2,7 +2,7 @@
 
 Personal portfolio site built with Next.js 16, TypeScript, and Tailwind CSS. Deployed to GitHub Pages via GitHub Actions.
 
-**Live:** [rajbahakdanyu.github.io](https://rajbahakdanyu.github.io)
+**Live:** [rajbahakdanyu.dev](https://rajbahakdanyu.dev)
 
 ## Tech Stack
 
@@ -44,10 +44,10 @@ bun run deploy
 
 ## Local Commands
 
-| Command | Description |
-|---|---|
-| `bun dev` | Start dev server with Turbopack |
-| `bun run build` | Production build |
-| `bun run lint` | Lint with Biome |
-| `bun run format` | Format with Biome |
-| `bun run deploy` | Trigger GitHub Actions deploy |
+| Command          | Description                     |
+| ---------------- | ------------------------------- |
+| `bun dev`        | Start dev server with Turbopack |
+| `bun run build`  | Production build                |
+| `bun run lint`   | Lint with Biome                 |
+| `bun run format` | Format with Biome               |
+| `bun run deploy` | Trigger GitHub Actions deploy   |

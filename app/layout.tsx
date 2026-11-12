@@ -24,12 +24,15 @@ export const metadata: Metadata = {
   title: "Danyu Rajbahak | Full-Stack Engineer",
   description:
     "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
-  metadataBase: new URL("https://rajbahakdanyu.github.io"),
+  metadataBase: new URL("https://rajbahakdanyu.dev"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Danyu Rajbahak | Full-Stack Engineer",
     description:
       "Full-stack engineer based in Brisbane. Building software that is fast, considered, and ships.",
-    url: "/portfolio",
+    url: "/",
     siteName: "Danyu Rajbahak",
     locale: "en_US",
     type: "website",
@@ -40,7 +43,7 @@ const jsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
   name: "Danyu Rajbahak",
-  url: "https://rajbahakdanyu.github.io/portfolio",
+  url: "https://rajbahakdanyu.dev/",
   jobTitle: "Full-Stack Engineer",
   sameAs: [
     "https://github.com/rajbahakdanyu",
